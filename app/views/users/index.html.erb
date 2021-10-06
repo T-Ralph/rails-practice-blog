@@ -1,0 +1,26 @@
+<h1>Users</h1>
+<small><%= link_to 'Sign Up', signup_path if !session_state? %></small>
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Profile</th>
+            <th>Joined</th>
+            <th>Articles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><%= link_to 'Profile', user_path(user) %></td>
+                <td><%= user.created_at %></td>
+                <td><%= user.articles.count %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= will_paginate @users %>

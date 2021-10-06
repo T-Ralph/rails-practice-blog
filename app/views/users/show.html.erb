@@ -1,0 +1,18 @@
+<h1><%= @user.username %></h1>
+<p>
+  <% if session_state? && (session_user == @user || session_user.admin?) %>
+    <small><%= link_to 'Edit Profile', edit_user_path(@user) %></small> |
+    <small><%= link_to 'Delete Account', user_path(@user), method: :delete, data: { confirm: "Sure?" } %></small> |
+    <small><%= link_to 'Logout', logout_path, method: :delete if session_user == @user %></small>
+    <br/>
+  <% end %>
+  <%= @user.email %>
+  <br/>
+  <%= if @user.admin? then "Admin" else "User" end %>
+</p>
+
+<%= gravatar @user, size: 100 %>
+
+<h2>Articles</h2>
+
+<%= render 'articles/articles' %>

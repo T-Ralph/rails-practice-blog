@@ -1,0 +1,10 @@
+<h1><%= @article.title %> by <%= @article.user.username %></h1>
+<p><%= @article.description %></p>
+<small><%= @article.created_at %></small>
+<p>
+  <% if session_state? && (@article.user == session_user || session_user.admin?) %>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Sure?" } %> |
+  <% end %>
+  <%= link_to 'Articles', articles_path %>
+</p>
