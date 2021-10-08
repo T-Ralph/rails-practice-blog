@@ -1,0 +1,6 @@
+<h1><%= @category.name %></h1>
+<small><%= link_to 'Edit Category', edit_category_path(@category) if session_state? && session_user.admin? %></small>
+
+<h2>Articles</h2>
+
+<%= render 'articles/articles' %>

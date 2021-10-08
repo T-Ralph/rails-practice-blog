@@ -1,6 +1,15 @@
-# Simple Rails Blog App with Users, Articles ...
+# Simple Rails Blog App with Users, Articles, Categories, Tests ...
 
 This Rails blog app was created with the help of [The Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/)
+
+## Getting Started
+* Install Ruby
+* Install Rails
+```
+rails db:migrate
+rails server
+```
+Visit http://127.0.0.1:3000
 
 ## README
 

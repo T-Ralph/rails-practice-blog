@@ -1,0 +1,12 @@
+<%= render 'shared/errors', obj: @category %>
+
+<%= form_with(model: @category, local: true) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit(@category.new_record? ? "Create" : "Update") %>
+  </p>
+<% end %>
